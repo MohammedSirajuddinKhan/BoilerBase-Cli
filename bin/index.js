@@ -46,6 +46,12 @@ const prompts = [
     choices: ["Vanilla CSS", "Bootstrap"],
     default: "Vanilla CSS",
   },
+  {
+    type: "confirm",
+    name: "openInVSCode",
+    message: "Open the generated folder in another VS Code Tab?",
+    default: true,
+  },
 ];
 
 const run = async () => {
@@ -77,14 +83,18 @@ const run = async () => {
     await installDependencies(projectPath);
     installSpinner.succeed("Installing dependencies...");
 
-    const openSpinner = ora("Opening VS Code...").start();
+    if (answers.openInVSCode) {
+      const openSpinner = ora("Opening VS Code...").start();
 
-    try {
-      await openVSCode(projectPath);
-      openSpinner.succeed("Opening VS Code...");
-    } catch (error) {
-      openSpinner.warn("Opening VS Code skipped");
-      console.log(chalk.yellow(`\n! ${error.message}`));
+      try {
+        await openVSCode(projectPath);
+        openSpinner.succeed("Opening VS Code...");
+      } catch (error) {
+        openSpinner.warn("Opening VS Code skipped");
+        console.log(chalk.yellow(`\n! ${error.message}`));
+      }
+    } else {
+      console.log(chalk.yellow("\n! Skipped opening VS Code."));
     }
 
     console.log(chalk.green("\n✔ Project ready successfully"));
