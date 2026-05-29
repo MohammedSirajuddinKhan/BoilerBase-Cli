@@ -4,7 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/boilerbase.svg)](https://www.npmjs.com/package/boilerbase)
 [![npm downloads](https://img.shields.io/npm/dm/boilerbase.svg)](https://www.npmjs.com/package/boilerbase)
-[![license](https://img.shields.io/npm/l/boilerbase.svg)](LICENSE)
+
 
 BoilerBase is a fast, interactive CLI for scaffolding backend projects with an opinionated starter structure. It asks a few setup questions, generates the files for you, installs dependencies, and can open the result in VS Code.
 
