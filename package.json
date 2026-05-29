@@ -1,6 +1,6 @@
 {
   "name": "boilerbase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal developer CLI for generating backend starter projects",
   "main": "./bin/index.js",
   "bin": {
