@@ -45,3 +45,11 @@ The generated backend starter includes:
 ## Publish
 
 This package is ready for `npm link`, `npm publish`, and `npx boilerbase`.
+
+If your npm account has 2FA enabled, publish with an OTP:
+
+```bash
+npm publish --otp=123456
+```
+
+Or create a granular access token with `bypass 2fa` enabled and use that token for publishing.

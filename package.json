@@ -6,6 +6,9 @@
   "bin": {
     "boilerbase": "./bin/index.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "bin",
     "generators",
