@@ -1,30 +1,84 @@
 # BoilerBase
 
-A modern beginner-friendly backend scaffolding CLI for Node.js developers.
+> Generate a backend starter project from the terminal in seconds.
+
+[![npm version](https://img.shields.io/npm/v/boilerbase.svg)](https://www.npmjs.com/package/boilerbase)
+[![npm downloads](https://img.shields.io/npm/dm/boilerbase.svg)](https://www.npmjs.com/package/boilerbase)
+[![license](https://img.shields.io/npm/l/boilerbase.svg)](LICENSE)
+
+BoilerBase is a fast, interactive CLI for scaffolding backend projects with an opinionated starter structure. It asks a few setup questions, generates the files for you, installs dependencies, and can open the result in VS Code.
+
+## Features
+
+- Interactive terminal prompts for project setup
+- Generates folders and starter files automatically
+- Installs dependencies after generation
+- Optional VS Code launch for the new project
+- Clean, modular structure for extending templates later
 
 ## Install
+
+Install it globally for local development:
 
 ```bash
 npm install
 npm link
 ```
 
-## Usage
+Or run it directly with `npx` once published:
 
 ```bash
 npx boilerbase
-# or
+```
+
+## Usage
+
+Start the CLI from the terminal:
+
+```bash
 boilerbase
 ```
 
-## What it does
+You will be prompted for things like:
 
-- Prompts for project settings in the terminal
-- Generates folders and starter files dynamically
-- Installs dependencies automatically
-- Opens the generated project in VS Code
+- Project name
+- Database choice
+- Authentication style
+- Template engine
+- CSS framework
+- Whether to open VS Code after generation
 
-## Stack
+## Example
+
+```bash
+boilerbase
+```
+
+Then answer the prompts and BoilerBase will create a project in your current directory.
+
+## What gets generated
+
+The generated starter includes:
+
+- Express server scaffold
+- Optional MongoDB config
+- JWT auth routes and middleware
+- EJS or HTML views
+- CSS starter file and public assets
+- Environment and package setup
+
+## Publish
+
+To publish a new version to npm:
+
+```bash
+npm version patch
+npm publish --otp=123456
+```
+
+If your account uses 2FA, you can also publish with a granular access token that has `bypass 2fa` enabled.
+
+## Tech Stack
 
 - Node.js
 - inquirer
@@ -32,24 +86,6 @@ boilerbase
 - ora
 - fs-extra
 
-## Generated project
+## License
 
-The generated backend starter includes:
-
-- Express server scaffold
-- Optional MongoDB config
-- JWT auth routes and middleware
-- EJS or HTML views
-- CSS starter file and public assets
-
-## Publish
-
-This package is ready for `npm link`, `npm publish`, and `npx boilerbase`.
-
-If your npm account has 2FA enabled, publish with an OTP:
-
-```bash
-npm publish --otp=123456
-```
-
-Or create a granular access token with `bypass 2fa` enabled and use that token for publishing.
+MIT
